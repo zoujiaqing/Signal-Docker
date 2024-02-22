@@ -1,12 +1,12 @@
-FROM eclipse-temurin:17
+FROM eclipse-temurin:21
 
 WORKDIR /app
 
-RUN wget -q https://github.com/JJTofflemire/registration-service/archive/45c2b87635185837aeb49e51afa1f9775d8e1341.zip && \
-        jar xf 45c2b87635185837aeb49e51afa1f9775d8e1341.zip && \
-        mv registration-service-45c2b87635185837aeb49e51afa1f9775d8e1341 registration-service && \
+RUN wget -q https://github.com/zoujiaqing/registration-service/archive/refs/heads/main.zip && \
+        jar xf main.zip && \
+        mv registration-service-main registration-service && \
         chmod -R +777 registration-service && \
-        rm 45c2b87635185837aeb49e51afa1f9775d8e1341.zip
+        rm main.zip
 
 WORKDIR /app/registration-service
 
